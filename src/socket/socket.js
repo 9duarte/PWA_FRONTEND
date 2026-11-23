@@ -1,7 +1,10 @@
 import { io } from "socket.io-client";
-import { BACKEND_URL } from "../config";
 
-const socket = io(BACKEND_URL, {
+const socketUrl = import.meta.env.PROD
+  ? "https://pwa-backend-2a4n.onrender.com"
+  : undefined;
+
+const socket = io(socketUrl, {
   withCredentials: true,
 });
 

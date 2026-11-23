@@ -19,3 +19,10 @@ export const getQrLoginToken = () =>
         }
         return data;
     });
+
+export const logout = () =>
+    fetch(apiUrl("/auth/logout"), {
+        method: "GET",
+        headers: { Accept: "application/json" },
+        credentials: "include",
+    }).then((response) => response.json());
