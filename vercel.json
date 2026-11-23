@@ -1,0 +1,9 @@
+
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://pwa-backend-2a4n.onrender.com/api/:path*"
+    }
+  ]
+}
