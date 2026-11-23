@@ -1,7 +1,9 @@
 import { io } from "socket.io-client";
+import { BACKEND_URL } from "../config";
 
-// Create socket instance using the proxy (no need for full URL)
-const socket = io();
+const socket = io(BACKEND_URL, {
+  withCredentials: true,
+});
 
 export const initSocket = () => {
   console.log("Inicializando socket...");

@@ -1,10 +1,13 @@
+import { apiUrl } from "../../config";
+
 export const getMember = (userId) =>
-  fetch(`/api/users/member/${userId}`, {
+  fetch(apiUrl(`/users/member/${userId}`), {
     headers: { Accept: 'application/json' },
+    credentials: "include",
   }).then((response) => response.json());
 
 export const createMember = (userId, data) =>
-  fetch(`/api/users/${userId}/member`, {
+  fetch(apiUrl(`/users/${userId}/member`), {
     headers: { "Content-Type": "application/json" },
     method: "POST",
     body: JSON.stringify(data),
